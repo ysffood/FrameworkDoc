@@ -1,0 +1,11 @@
+ViewPage 控件就是一个android.support.v4.view.ViewPager
+~有自带的指引条 android.support.v4.view.PagerTabStrip注意要作为ViewPage的子标签
+~viewPage 其实就是自定义一个适配器继承PageAdater，然后把adapter添加给ViewPage，此外还可以添加切换动画。
+~写个集合，添加View视图进集合，然后把这个视图集合传给adapter
+~PageAdapter中主要重写四个方法getCount isViewFromObject instantiateItem destroyItem
+~可以通过重写getPageTitle方法添加默认样式的指引条标题
+
+如果往ViewPage中添加Fragment
+~只需要把添加的view换成Fragment对象
+~把继承的PageAdapter换成FragmentPageAdater，FragmentPageAdater继承了PageAdapter，封了一些对
+fragment生命周期回收等的处理。

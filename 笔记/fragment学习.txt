@@ -1,0 +1,16 @@
+1、几个比较重要的类
+Fragment
+FragmentManager
+FragmentTranscation
+
+2、两种应用方式
+静态方式：直接在activity布局里面添加fragment标签，比较重要的两条属性（tools：layout和android：name用来分别引用布局跟Fragment文件）
+把fragment当做布局使用，比较好的fragment有自己的生命周期。
+
+动态方式：在FragmentAcitvity布局中添加FrameLayout,然后在FragmentAcitvity文件中通过FragmentTranscation去add Fragment和tag与公共布局id绑定
+主要有remove add摧毁实例 相当于 replace ，hide show不摧毁实例与视图 deptch 类似于remove 但是只摧毁视图，保留Fragment实例 attach 贴上视图
+如果Fragment添加到了回退栈，那么调用remove实例不会被摧毁，仅摧毁视图
+commit提交本次事务
+
+3、Fragment与activity的交互
+在activity中可以通过FragmentMananger类方法getFragmentByTab或者Id能获取到Fragment实例，在fragment中可以getacitivity获取actitity实例。
